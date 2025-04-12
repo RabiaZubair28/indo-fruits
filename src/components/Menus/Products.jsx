@@ -75,7 +75,7 @@ const Products = () => {
     >
       <div className="w-full max-w-7xl px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-6 xs:mb-6 sm:mb-6 md:mb-12 lg:mb-12 xl:mb-12 xxl:mb-12"
