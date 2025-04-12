@@ -58,7 +58,7 @@ const Home = () => {
           <div className="relative z-10 max-w-7xl mx-auto px-4">
             <motion.div
               ref={heroRef}
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: 0 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1 }}
               className="max-w-2xl"
