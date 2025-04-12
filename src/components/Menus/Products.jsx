@@ -90,11 +90,7 @@ const Products = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 xs:gap-4 sm:gap-4 md:gap-6 lg:gap-6 xl:gap-6 xxl:gap-6">
           {MenuData.slice(0, visibleItems).map((menu) => (
-            <motion.div
-              variants={FadeLeft(menu.delay)}
-              initial="hidden"
-              whileInView={"visible"}
-              whileHover={{ scale: 1.05 }}
+            <div
               key={menu.id}
               className="bg-white rounded-2xl px-4 py-3 shadow-md flex flex-row items-center gap-4 h-auto"
             >
@@ -112,7 +108,7 @@ const Products = () => {
                   {menu.price} <span className="ml-1 text-gray-600">kg</span>
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
