@@ -71,7 +71,7 @@ const Products = () => {
   return (
     <section
       id="products"
-      className="mt-8 xs:mt-8 sm:mt-8 md:mt-10 lg:mt-10 xl:mt-10 xxl:mt-10 mb-8 xs:mb-8 sm:mb-8 md:mb-10 lg:mb-10 xl:mb-10 xxl:mb-10 bg-gray-50 flex justify-center"
+      className="pt-8 xs:pt-8 sm:pt-8 md:pt-10 lg:pt-10 xl:pt-10 xxl:pt-10 pb-8 xs:pb-8 sm:pb-8 md:pb-10 lg:pb-10 xl:pb-10 xxl:pb-10 bg-gray-50 flex justify-center"
     >
       <div className="w-full max-w-7xl px-4">
         <motion.div
