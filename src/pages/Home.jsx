@@ -104,7 +104,7 @@ const Home = () => {
           </div>
         </section>
 
-        <Menus />
+        {/* <Menus /> */}
         <Banner />
 
         {/* Featured Products */}
