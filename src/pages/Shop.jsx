@@ -6,7 +6,7 @@ import mb from "../assets/Images/mb7.webp";
 import { gsap } from "gsap";
 import { createPortal } from "react-dom";
 import emailjs from "@emailjs/browser";
-
+import { FaWhatsapp } from "react-icons/fa";
 import { toast, Toaster } from "react-hot-toast";
 
 const CustomModal = ({ children, closeModal }) => {
@@ -50,6 +50,35 @@ const CustomModal = ({ children, closeModal }) => {
     </div>
   );
 };
+
+function WhatsappButton() {
+  return (
+    <a
+      href="https://wa.me/923337109448"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        zIndex: 1000,
+        backgroundColor: "#25D366",
+        borderRadius: "50%",
+        width: "60px",
+        height: "60px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+        color: "white",
+        fontSize: "32px",
+        cursor: "pointer",
+      }}
+    >
+      <FaWhatsapp />
+    </a>
+  );
+}
 
 const defaultOrderFormData = {
   name: "",
@@ -284,64 +313,67 @@ const Shop = () => {
   });
 
   return (
-    <div className="pt-24 pb-8 xs:pb-8 sm:pb-8 md:pb-16 lg:pb-16 xl:pb-16 xxl:pb-16 min-h-screen bg-gradient-to-b from-white to-green-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-2 xs:mb-2 sm:mb-2 md:mb-12 lg:mb-12 xl:mb-12 xxl:mb-12"
-        >
-          <h1 className="text-3xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl xxl:text-4xl  font-bold mb-4">
-            Fresh Fruits Market
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Discover nature's sweetest offerings
-          </p>
-        </motion.div>
+    <>
+      <div className="pt-24 pb-8 xs:pb-8 sm:pb-8 md:pb-16 lg:pb-16 xl:pb-16 xxl:pb-16 min-h-screen bg-gradient-to-b from-white to-green-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-2 xs:mb-2 sm:mb-2 md:mb-12 lg:mb-12 xl:mb-12 xxl:mb-12"
+          >
+            <h1 className="text-3xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl xxl:text-4xl  font-bold mb-4">
+              Fresh Fruits Market
+            </h1>
+            <p className="text-gray-600 text-lg">
+              Discover nature's sweetest offerings
+            </p>
+          </motion.div>
 
-        {/* Search and Filter Section */}
-        <div className="mb-12">
-          <div className="flex flex-col md:flex-row gap-6 items-center justify-between bg-white p-6 rounded-2xl shadow-lg">
-            <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search fruits..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-            </div>
-            <div className="flex items-center space-x-4">
-              <Filter className="text-green-600" />
-              <div className="flex space-x-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                      selectedCategory === category
-                        ? "bg-green-600 text-white"
-                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+          {/* Search and Filter Section */}
+          <div className="mb-12">
+            <div className="flex flex-col md:flex-row gap-6 items-center justify-between bg-white p-6 rounded-2xl shadow-lg">
+              <div className="relative flex-1">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search fruits..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+              <div className="flex items-center space-x-4">
+                <Filter className="text-green-600" />
+                <div className="flex space-x-2">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                        selectedCategory === category
+                          ? "bg-green-600 text-white"
+                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <AnimatePresence>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-4 sm:gap-4 md:gap-8 lg:gap-8 xl:gap-8">
-            {filteredFruits.map((fruit, index) => (
-              <FloatingCard key={index} fruit={fruit} index={index} />
-            ))}
-          </div>
-        </AnimatePresence>
+          <AnimatePresence>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-4 sm:gap-4 md:gap-8 lg:gap-8 xl:gap-8">
+              {filteredFruits.map((fruit, index) => (
+                <FloatingCard key={index} fruit={fruit} index={index} />
+              ))}
+            </div>
+          </AnimatePresence>
+        </div>
       </div>
-    </div>
+      <WhatsappButton />
+    </>
   );
 };
 

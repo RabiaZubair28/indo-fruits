@@ -10,6 +10,7 @@ import Menus from "../components/Menus/Products";
 import NavBar from "../components/NavBar/NavBar";
 import Banner3 from "../components/Banners/Banner3";
 import sb from "../assets/Images/call-me-fred-BUAoLq-sOFo-unsplash (1).jpg";
+import { FaWhatsapp } from "react-icons/fa";
 const FeatureCard = ({ icon: Icon, title, description, delay }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -34,6 +35,35 @@ const FeatureCard = ({ icon: Icon, title, description, delay }) => {
     </motion.div>
   );
 };
+
+function WhatsappButton() {
+  return (
+    <a
+      href="https://wa.me/923337109448"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        zIndex: 1000,
+        backgroundColor: "#25D366",
+        borderRadius: "50%",
+        width: "60px",
+        height: "60px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+        color: "white",
+        fontSize: "32px",
+        cursor: "pointer",
+      }}
+    >
+      <FaWhatsapp />
+    </a>
+  );
+}
 
 const Home = () => {
   const [heroRef, heroInView] = useInView({
@@ -79,6 +109,14 @@ const Home = () => {
               >
                 Freshness in Every Bite
               </motion.h1>
+              <motion.span
+                className="text-black font-bold text-2xl mb-4 block"
+                initial={{ opacity: 0 }}
+                animate={heroInView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.2 }}
+              >
+                Delivery All Over India
+              </motion.span>
               <motion.p
                 className="text-md xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl xxl:text-xl mb-8 text-gray-600"
                 initial={{ opacity: 0 }}
@@ -246,6 +284,7 @@ const Home = () => {
           </div>
         </section>
       </div>
+      <WhatsappButton />
     </>
   );
 };
