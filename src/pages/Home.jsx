@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Leaf, Truck, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import Banner from "../components/Banners/About";
 import Banner2 from "../components/Banners/Shop";
@@ -71,6 +71,7 @@ const Home = () => {
     threshold: 0.2,
   });
 
+  const navigate = useNavigate();
   return (
     <>
       <div className="pt-16 bg-white">
@@ -133,7 +134,7 @@ const Home = () => {
               >
                 <Link
                   to="/shop"
-                  className="inline-flex items-center bg-gray-900 text-white px-8 py-4 rounded-full hover:bg-green-600 transition-colors text-lg font-medium"
+                  className="inline-flex items-center bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-600 transition-colors text-lg font-medium"
                 >
                   Shop Now <ArrowRight className="ml-2" />
                 </Link>
@@ -174,7 +175,7 @@ const Home = () => {
                   name: "Organic Avocados",
                   image:
                     "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&q=80",
-                  description: "Creamy and nutritious avocados",
+                  description: "Creamy, tasty, healthy and nutritious avocados",
                   price: "900/- per Kilo",
                 },
                 {
@@ -189,7 +190,10 @@ const Home = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg group"
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                  onClick={() => {
+                    navigate("/shop");
+                  }}
                 >
                   <div className="relative h-72 overflow-hidden">
                     <img
@@ -204,8 +208,8 @@ const Home = () => {
                     </h3>
                     <p className="text-gray-600 mb-4">{fruit.description}</p>
                     <div className="flex items-center justify-center">
-                      <span className="text-green-600 text-center font-semibold">
-                        {fruit.price}
+                      <span className="w-full py-3 rounded-xl text-white bg-green-600 text-center font-semibold">
+                        Shop Now
                       </span>
                     </div>
                   </div>

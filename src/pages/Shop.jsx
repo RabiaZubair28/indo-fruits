@@ -144,7 +144,7 @@ const FloatingCard = ({ fruit, index }) => {
                 className="w-full px-4 py-2 border rounded"
                 required
               />
-              <input
+              {/* <input
                 type="email"
                 name="email"
                 value={order.email}
@@ -152,7 +152,7 @@ const FloatingCard = ({ fruit, index }) => {
                 placeholder="Your Email"
                 className="w-full px-4 py-2 border rounded"
                 required
-              />
+              /> */}
               <input
                 type="tel"
                 name="contactNo"
@@ -209,16 +209,16 @@ const FloatingCard = ({ fruit, index }) => {
           </div>
         </div>
         <div className="p-6">
-          <div className="flex justify-between items-start mb-4">
-            <div>
+          <div className="flex justify-center items-center mb-4">
+            <div className="flex flex-row gap-x-3">
               <h3 className="text-xl font-bold mb-2">{fruit.name}</h3>
               <span className="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">
                 {fruit.category}
               </span>
             </div>
-            <div className="text-2xl font-bold text-green-600">
+            {/* <div className="text-2xl font-bold text-green-600">
               {fruit.price}/- per Kilo
-            </div>
+            </div> */}
           </div>
           <button
             className="w-full bg-green-600 text-white py-3 px-4 rounded-xl hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 transform hover:scale-105 transition-transform duration-300"
@@ -324,8 +324,8 @@ const Shop = () => {
             <h1 className="text-3xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl xxl:text-4xl  font-bold mb-4">
               Fresh Fruits Market
             </h1>
-            <p className="text-gray-600 text-lg">
-              Discover nature's sweetest offerings
+            <p className="text-green-600 font-semibold  text-2xl">
+              We deliver in all over India
             </p>
           </motion.div>
 
@@ -343,7 +343,7 @@ const Shop = () => {
                 />
               </div>
               <div className="flex items-center space-x-4">
-                <Filter className="text-green-600" />
+                {/* <Filter className="text-green-600" /> */}
                 <div className="flex space-x-2">
                   {categories.map((category) => (
                     <button
