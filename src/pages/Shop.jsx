@@ -107,7 +107,7 @@ const CustomModal = ({ children, closeModal }) => {
         </motion.button>
 
         <div className="flex flex-col space-y-4">
-          <div className="flex flex-row justify-center gap-x-5">
+          <div className="flex flex-row justify-center gap-x-1 xs:gap-x-1 sm:gap-x-1 md:gap-x-5 lg:gap-x-5 xl:gap-x-5 xxl:gap-x-5">
             <h2 className="text-3xl font-bold text-green-600 text-center mb-4">
               Send Us Inquiry!
             </h2>
@@ -293,14 +293,6 @@ const FloatingCard = ({ fruit, index }) => {
   }, []);
 
   // Inside FloatingCard
-  useEffect(() => {
-    if (order.name === "Premium Mangoes") {
-      setOrder((prev) => ({
-        ...prev,
-        itemNo: `${tempQty} ${tempUnit}`.trim(),
-      }));
-    }
-  }, [tempQty, tempUnit]);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -351,53 +343,42 @@ const FloatingCard = ({ fruit, index }) => {
                 placeholder="Phone Number"
                 className="w-full px-4 py-2 border rounded"
               />
-              {order.name === "Premium Mangoes" ? (
-                <div className="flex gap-2">
-                  <input
-                    type="number"
-                    value={tempQty}
-                    onChange={(e) => {
-                      const newQty = e.target.value;
-                      setTempQty(newQty);
-                      setOrder((prev) => ({
-                        ...prev,
-                        itemNo: `${newQty} ${tempUnit}`.trim(),
-                      }));
-                    }}
-                    placeholder="Quantity"
-                    className="w-1/2 px-4 py-2 border rounded"
-                    required
-                  />
-                  <select
-                    value={tempUnit}
-                    onChange={(e) => {
-                      const newUnit = e.target.value;
-                      setTempUnit(newUnit);
-                      setOrder((prev) => ({
-                        ...prev,
-                        itemNo: `${tempQty} ${newUnit}`.trim(),
-                      }));
-                    }}
-                    className="w-1/2 px-4 py-2 border rounded"
-                    required
-                  >
-                    <option value="">Unit</option>
-                    <option value="Dozen">Dozen</option>
-                    <option value="Half Dozen">Half Dozen</option>
-                    <option value="Patti">Patti</option>
-                  </select>
-                </div>
-              ) : (
+
+              <div className="flex gap-2">
                 <input
                   type="number"
-                  name="itemNo"
-                  value={order.itemNo}
-                  onChange={handleInput}
+                  value={tempQty}
+                  onChange={(e) => {
+                    const newQty = e.target.value;
+                    setTempQty(newQty);
+                    setOrder((prev) => ({
+                      ...prev,
+                      itemNo: `${newQty} ${tempUnit}`.trim(),
+                    }));
+                  }}
                   placeholder="Quantity"
                   className="w-1/2 px-4 py-2 border rounded"
                   required
                 />
-              )}
+                <select
+                  value={tempUnit}
+                  onChange={(e) => {
+                    const newUnit = e.target.value;
+                    setTempUnit(newUnit);
+                    setOrder((prev) => ({
+                      ...prev,
+                      itemNo: `${tempQty} ${newUnit}`.trim(),
+                    }));
+                  }}
+                  className="w-1/2 px-4 py-2 border rounded"
+                  required
+                >
+                  <option value="">Unit</option>
+                  <option value="Dozen">Dozen</option>
+                  <option value="Half Dozen">Half Dozen</option>
+                  <option value="Patti">Patti</option>
+                </select>
+              </div>
 
               {/* Hidden input to pass itemNo */}
               <input type="hidden" name="itemNo" value={order.itemNo} />
