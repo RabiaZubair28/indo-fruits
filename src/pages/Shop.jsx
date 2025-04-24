@@ -311,10 +311,12 @@ const FloatingCard = ({ fruit, index }) => {
       )
       .then(() => {
         toast.success("Email sent successfully!");
+        alert("Email sent successfully!");
         setModalOpen(false);
         setOrder(defaultOrderFormData);
       })
       .catch((error) => {
+        alert("Failed to send Email!");
         toast.error("Failed to send email. Please try again.");
         console.error("FAILED...", error);
       });
