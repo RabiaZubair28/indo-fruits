@@ -18,22 +18,55 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden md:block">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-4">
               <Link
                 to="/"
                 className="text-gray-600 hover:text-green-600 font-medium transition-colors"
+                style={{
+                  backgroundColor: "white", // Light blue
+                  borderRadius: "10px",
+                  border: "1px solid green",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                  color: "green",
+                  fontSize: "18px",
+                  cursor: "pointer",
+                  paddingInline: "15px",
+                  paddingBlock: "5px",
+                }}
               >
                 Home
               </Link>
               <Link
                 to="/shop"
                 className="text-gray-600 hover:text-green-600 font-medium transition-colors"
+                style={{
+                  backgroundColor: "white", // Light blue
+                  borderRadius: "10px",
+                  border: "1px solid green",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                  color: "green",
+                  fontSize: "18px",
+                  cursor: "pointer",
+                  paddingInline: "15px",
+                  paddingBlock: "5px",
+                }}
               >
                 Shop
               </Link>
               <Link
                 to="/contact"
                 className="text-gray-600 hover:text-green-600 font-medium transition-colors"
+                style={{
+                  backgroundColor: "white", // Light blue
+                  borderRadius: "10px",
+                  border: "1px solid green",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                  color: "green",
+                  fontSize: "18px",
+                  cursor: "pointer",
+                  paddingInline: "15px",
+                  paddingBlock: "5px",
+                }}
               >
                 Contact
               </Link>
@@ -63,6 +96,18 @@ const Navbar = () => {
               to="/"
               className="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md transition-colors"
               onClick={() => setIsOpen(false)}
+              style={{
+                backgroundColor: "white", // Light blue
+                borderRadius: "10px",
+                border: "1px solid green",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                color: "green",
+                textAlign: "center",
+                fontSize: "18px",
+                cursor: "pointer",
+                paddingInline: "15px",
+                paddingBlock: "5px",
+              }}
             >
               Home
             </Link>
@@ -70,6 +115,18 @@ const Navbar = () => {
               to="/shop"
               className="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md transition-colors"
               onClick={() => setIsOpen(false)}
+              style={{
+                backgroundColor: "white", // Light blue
+                borderRadius: "10px",
+                border: "1px solid green",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                color: "green",
+                textAlign: "center",
+                fontSize: "18px",
+                cursor: "pointer",
+                paddingInline: "15px",
+                paddingBlock: "5px",
+              }}
             >
               Shop
             </Link>
@@ -77,6 +134,18 @@ const Navbar = () => {
               to="/contact"
               className="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md transition-colors"
               onClick={() => setIsOpen(false)}
+              style={{
+                backgroundColor: "white", // Light blue
+                borderRadius: "10px",
+                border: "1px solid green",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                color: "green",
+                textAlign: "center",
+                fontSize: "18px",
+                cursor: "pointer",
+                paddingInline: "15px",
+                paddingBlock: "5px",
+              }}
             >
               Contact
             </Link>

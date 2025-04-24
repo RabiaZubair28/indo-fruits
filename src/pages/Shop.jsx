@@ -107,8 +107,8 @@ const CustomModal = ({ children, closeModal }) => {
         </motion.button>
 
         <div className="flex flex-col space-y-4">
-          <div className="flex flex-row justify-center gap-x-1 xs:gap-x-1 sm:gap-x-1 md:gap-x-5 lg:gap-x-5 xl:gap-x-5 xxl:gap-x-5">
-            <h2 className="text-3xl font-bold text-green-600 text-center mb-4">
+          <div className="flex flex-col justify-center items-center mb-3">
+            <h2 className="text-3xl font-bold text-green-600 text-center mb-2">
               Send Us Inquiry!
             </h2>
             <CallButton />
