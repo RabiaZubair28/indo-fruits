@@ -11,6 +11,67 @@ import NavBar from "../components/NavBar/NavBar";
 import Banner3 from "../components/Banners/Banner3";
 import sb from "../assets/Images/call-me-fred-BUAoLq-sOFo-unsplash (1).jpg";
 import { FaWhatsapp } from "react-icons/fa";
+import { PhoneCall } from "lucide-react"; // or use FaPhone from react-icons/fa
+import { useEffect, useState } from "react";
+
+import str1 from "../assets/Images/str1.jpeg";
+import str2 from "../assets/Images/str2.jpeg";
+import str3 from "../assets/Images/str3.jpeg";
+import str4 from "../assets/Images/str4.jpeg";
+import str5 from "../assets/Images/str5.jpeg";
+import str6 from "../assets/Images/str6.jpeg";
+import str7 from "../assets/Images/str7.jpeg";
+import avo1 from "../assets/Images/avo1.jpeg";
+import avo2 from "../assets/Images/avo2.jpeg";
+import avo3 from "../assets/Images/avo3.jpeg";
+import avo4 from "../assets/Images/avo4.jpeg";
+import avo5 from "../assets/Images/avo5.jpeg";
+import avo6 from "../assets/Images/avo6.jpeg";
+import avo7 from "../assets/Images/avo7.jpeg";
+import mn1 from "../assets/Images/mn1.jpeg";
+import mn2 from "../assets/Images/mn2.jpeg";
+import mn3 from "../assets/Images/mn3.jpeg";
+import mn4 from "../assets/Images/mn4.jpeg";
+import mn5 from "../assets/Images/mn5.jpeg";
+import mn6 from "../assets/Images/mn6.jpeg";
+import mn7 from "../assets/Images/mn7.jpeg";
+const useImageSlider = (images, delay = 2000) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length < 2) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, delay);
+    return () => clearInterval(interval);
+  }, [images, delay]);
+
+  return images[index];
+};
+
+function CallButton() {
+  return (
+    <a
+      href="tel:+923337109448" // Change this to your desired number
+      style={{
+        backgroundColor: "black", // Light blue
+        borderRadius: "50%",
+        width: "60px",
+        height: "60px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+        color: "white",
+        fontSize: "32px",
+        cursor: "pointer",
+      }}
+    >
+      <PhoneCall />
+    </a>
+  );
+}
+
 const FeatureCard = ({ icon: Icon, title, description, delay }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -131,6 +192,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.8 }}
+                className="flex flex-row gap-x-3 "
               >
                 <Link
                   to="/shop"
@@ -138,6 +200,7 @@ const Home = () => {
                 >
                   Shop Now <ArrowRight className="ml-2" />
                 </Link>
+                <CallButton />
               </motion.div>
             </motion.div>
           </div>
@@ -165,56 +228,85 @@ const Home = () => {
               {[
                 {
                   name: "Premium Mangoes",
-                  image:
+                  image: [
                     "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80",
+                    mn1,
+                    mn2,
+                    mn3,
+                    mn4,
+                    mn5,
+                    mn6,
+                    mn7,
+                  ],
                   description:
                     "Sweet and juicy mangoes from the finest orchards",
                   price: "100/- per Kilo",
                 },
                 {
                   name: "Organic Avocados",
-                  image:
+                  image: [
                     "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&q=80",
+                    avo1,
+                    avo2,
+                    avo3,
+                    avo4,
+                    avo5,
+                    avo6,
+                    avo7,
+                  ],
                   description: "Creamy, tasty, healthy and nutritious avocados",
                   price: "900/- per Kilo",
                 },
                 {
                   name: "Fresh Berries",
-                  image: sb,
+                  image: [
+                    "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&q=80",
+                    str1,
+                    str2,
+                    str3,
+                    str4,
+                    str5,
+                    str6,
+                    str7,
+                  ],
                   description: "A delightful mix of fresh seasonal berries",
                   price: "500/- per Kilo",
                 },
-              ].map((fruit, index) => (
-                <motion.div
-                  key={fruit.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
-                  onClick={() => {
-                    navigate("/shop");
-                  }}
-                >
-                  <div className="relative h-72 overflow-hidden">
-                    <img
-                      src={fruit.image}
-                      alt={fruit.name}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-8 text-center">
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">
-                      {fruit.name}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{fruit.description}</p>
-                    <div className="flex items-center justify-center">
-                      <span className="w-full py-3 rounded-xl text-white bg-green-600 text-center font-semibold">
-                        Shop Now
-                      </span>
+              ].map((fruit, index) => {
+                const currentImage = useImageSlider(fruit.image); // 🔥 Use slider hook
+
+                return (
+                  <motion.div
+                    key={fruit.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                    onClick={() => {
+                      navigate("/shop");
+                    }}
+                  >
+                    <div className="relative h-72 overflow-hidden">
+                      <img
+                        src={currentImage}
+                        alt={fruit.name}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                    <div className="p-8 text-center">
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">
+                        {fruit.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4">{fruit.description}</p>
+                      <div className="flex items-center justify-center">
+                        <span className="w-full py-3 rounded-xl text-white bg-green-600 text-center font-semibold">
+                          Shop Now
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>

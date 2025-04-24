@@ -8,7 +8,73 @@ import { createPortal } from "react-dom";
 import emailjs from "@emailjs/browser";
 import { FaWhatsapp } from "react-icons/fa";
 import { toast, Toaster } from "react-hot-toast";
-
+import { PhoneCall } from "lucide-react"; // or use FaPhone from react-icons/fa
+import mb1 from "../assets/Images/mb1.webp";
+import mb2 from "../assets/Images/mb2.webp";
+import mb3 from "../assets/Images/mb3.jpeg";
+import mb4 from "../assets/Images/mb4.jpeg";
+import mb5 from "../assets/Images/mb5.jpeg";
+import mb6 from "../assets/Images/mb6.jpg";
+import mb7 from "../assets/Images/mb7.webp";
+import str1 from "../assets/Images/str1.jpeg";
+import str2 from "../assets/Images/str2.jpeg";
+import str3 from "../assets/Images/str3.jpeg";
+import str4 from "../assets/Images/str4.jpeg";
+import str5 from "../assets/Images/str5.jpeg";
+import str6 from "../assets/Images/str6.jpeg";
+import str7 from "../assets/Images/str7.jpeg";
+import bb1 from "../assets/Images/bb1.jpeg";
+import bb2 from "../assets/Images/bb2.jpeg";
+import bb3 from "../assets/Images/bb3.jpeg";
+import bb4 from "../assets/Images/bb4.jpeg";
+import bb5 from "../assets/Images/bb5.jpeg";
+import bb6 from "../assets/Images/bb6.jpeg";
+import bb7 from "../assets/Images/bb7.jpeg";
+import ch1 from "../assets/Images/ch1.jpeg";
+import ch2 from "../assets/Images/ch2.jpeg";
+import ch3 from "../assets/Images/ch3.jpeg";
+import ch4 from "../assets/Images/ch4.jpeg";
+import ch5 from "../assets/Images/ch5.jpeg";
+import ch6 from "../assets/Images/ch6.jpeg";
+import ch7 from "../assets/Images/ch7.jpeg";
+import avo1 from "../assets/Images/avo1.jpeg";
+import avo2 from "../assets/Images/avo2.jpeg";
+import avo3 from "../assets/Images/avo3.jpeg";
+import avo4 from "../assets/Images/avo4.jpeg";
+import avo5 from "../assets/Images/avo5.jpeg";
+import avo6 from "../assets/Images/avo6.jpeg";
+import avo7 from "../assets/Images/avo7.jpeg";
+import mn1 from "../assets/Images/mn1.jpeg";
+import mn2 from "../assets/Images/mn2.jpeg";
+import mn3 from "../assets/Images/mn3.jpeg";
+import mn4 from "../assets/Images/mn4.jpeg";
+import mn5 from "../assets/Images/mn5.jpeg";
+import mn6 from "../assets/Images/mn6.jpeg";
+import mn7 from "../assets/Images/mn7.jpeg";
+function CallButton() {
+  return (
+    <a
+      href="tel:+923337109448" // Change this to your desired number
+      style={{
+        backgroundColor: "white", // Light blue
+        borderRadius: "10px",
+        width: "140px",
+        height: "40px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        border: "1px solid green",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+        color: "green",
+        fontSize: "18px",
+        cursor: "pointer",
+      }}
+    >
+      Call Now &nbsp;
+      <PhoneCall size={20} />
+    </a>
+  );
+}
 const CustomModal = ({ children, closeModal }) => {
   return (
     <div className="fixed inset-0 bg-blue-50 bg-opacity-95 flex items-center justify-center p-4 z-50">
@@ -41,9 +107,12 @@ const CustomModal = ({ children, closeModal }) => {
         </motion.button>
 
         <div className="flex flex-col space-y-4">
-          <h2 className="text-3xl font-bold text-green-600 text-center mb-4">
-            Send Us Inquiry!
-          </h2>
+          <div className="flex flex-row justify-center gap-x-5">
+            <h2 className="text-3xl font-bold text-green-600 text-center mb-4">
+              Send Us Inquiry!
+            </h2>
+            <CallButton />
+          </div>
           {children}
         </div>
       </motion.div>
@@ -87,12 +156,137 @@ const defaultOrderFormData = {
   itemNo: "",
   contactNo: "",
 };
+const fruits = [
+  {
+    id: 1,
+    name: "Premium Mangoes",
+    price: 100,
+    rating: 4.8,
+    image: [
+      "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80",
+      mn1,
+      mn2,
+      mn3,
+      mn4,
+      mn5,
+      mn6,
+      mn7,
+    ],
+    description: "Sweet and juicy mangoes from the finest orchards",
+    category: "Tropical",
+  },
+  {
+    id: 2,
+    name: "Organic Avocados",
+    price: 900,
+    rating: 4.9,
+    image: [
+      "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&q=80",
+      avo1,
+      avo2,
+      avo3,
+      avo4,
+      avo5,
+      avo6,
+      avo7,
+    ],
+    description: "Creamy and nutritious avocados",
+    category: "Tropical",
+  },
+  {
+    id: 3,
+    name: "Fresh Cherries",
+    price: 500,
+    rating: 4.7,
+    image: [
+      "https://images.unsplash.com/photo-1528821128474-27f963b062bf?auto=format&fit=crop&q=80",
+      ch1,
+      ch2,
+      ch3,
+      ch4,
+      ch5,
+      ch6,
+      ch7,
+    ],
+    description: "Fresh and sweet cherries",
+    category: "Berries",
+  },
+  {
+    id: 4,
+    name: "Wild Mulberry",
+    price: 250,
+    rating: 4.6,
+    image: [mb, mb1, mb2, mb3, mb4, mb5, mb6, mb7],
+    description: "Delicious and healthy mulberries",
+    category: "Berries",
+  },
+  {
+    id: 5,
+    name: "Organic Blueberry",
+    price: 200,
+    rating: 4.9,
+    image: [
+      "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&q=80",
+      bb1,
+      bb2,
+      bb3,
+      bb4,
+      bb5,
+      bb6,
+      bb7,
+    ],
+    description: "Fresh blueberries packed with antioxidants",
+    category: "Berries",
+  },
+  {
+    id: 6,
+    name: "Fresh Strawberry",
+    price: 50,
+    rating: 4.8,
+    image: [
+      "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&q=80",
+      str1,
+      str2,
+      str3,
+      str4,
+      str5,
+      str6,
+      str7,
+    ],
+    description: "Sweet and juicy strawberries",
+    category: "Berries",
+  },
+];
 
 const FloatingCard = ({ fruit, index }) => {
   const cardRef = useRef(null);
   const form = useRef();
   const [modalOpen, setModalOpen] = useState(false);
   const [order, setOrder] = useState(defaultOrderFormData);
+  const [tempQty, setTempQty] = useState("");
+  const [tempUnit, setTempUnit] = useState("");
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-scroll forward
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % fruit.image.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [fruit.image]);
+
+  // Auto-advance images every 2 seconds
+  useEffect(() => {
+    if (fruit.image.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex(
+          (prevIndex) => (prevIndex + 1) % fruit.image.length
+        );
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+  }, [fruit.image]);
 
   useEffect(() => {
     gsap.to(cardRef.current, {
@@ -104,6 +298,16 @@ const FloatingCard = ({ fruit, index }) => {
     });
   }, []);
 
+  // Inside FloatingCard
+  useEffect(() => {
+    if (order.name === "Premium Mangoes") {
+      setOrder((prev) => ({
+        ...prev,
+        itemNo: `${tempQty} ${tempUnit}`.trim(),
+      }));
+    }
+  }, [tempQty, tempUnit]);
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     setOrder((prev) => ({ ...prev, [name]: value }));
@@ -111,6 +315,7 @@ const FloatingCard = ({ fruit, index }) => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    console.log(order); // Log the order to check if itemNo is set
     emailjs
       .sendForm(
         "service_levr829",
@@ -144,15 +349,6 @@ const FloatingCard = ({ fruit, index }) => {
                 className="w-full px-4 py-2 border rounded"
                 required
               />
-              {/* <input
-                type="email"
-                name="email"
-                value={order.email}
-                onChange={handleInput}
-                placeholder="Your Email"
-                className="w-full px-4 py-2 border rounded"
-                required
-              /> */}
               <input
                 type="tel"
                 name="contactNo"
@@ -161,14 +357,56 @@ const FloatingCard = ({ fruit, index }) => {
                 placeholder="Phone Number"
                 className="w-full px-4 py-2 border rounded"
               />
-              <input
-                type="number"
-                name="itemNo"
-                value={order.itemNo}
-                onChange={handleInput}
-                placeholder="Quantity"
-                className="w-full px-4 py-2 border rounded"
-              />
+              {order.name === "Premium Mangoes" ? (
+                <div className="flex gap-2">
+                  <input
+                    type="number"
+                    value={tempQty}
+                    onChange={(e) => {
+                      const newQty = e.target.value;
+                      setTempQty(newQty);
+                      setOrder((prev) => ({
+                        ...prev,
+                        itemNo: `${newQty} ${tempUnit}`.trim(),
+                      }));
+                    }}
+                    placeholder="Quantity"
+                    className="w-1/2 px-4 py-2 border rounded"
+                    required
+                  />
+                  <select
+                    value={tempUnit}
+                    onChange={(e) => {
+                      const newUnit = e.target.value;
+                      setTempUnit(newUnit);
+                      setOrder((prev) => ({
+                        ...prev,
+                        itemNo: `${tempQty} ${newUnit}`.trim(),
+                      }));
+                    }}
+                    className="w-1/2 px-4 py-2 border rounded"
+                    required
+                  >
+                    <option value="">Unit</option>
+                    <option value="Dozen">Dozen</option>
+                    <option value="Half Dozen">Half Dozen</option>
+                    <option value="Patti">Patti</option>
+                  </select>
+                </div>
+              ) : (
+                <input
+                  type="number"
+                  name="itemNo"
+                  value={order.itemNo}
+                  onChange={handleInput}
+                  placeholder="Quantity"
+                  className="w-1/2 px-4 py-2 border rounded"
+                  required
+                />
+              )}
+
+              {/* Hidden input to pass itemNo */}
+              <input type="hidden" name="itemNo" value={order.itemNo} />
 
               <textarea
                 name="description"
@@ -197,9 +435,9 @@ const FloatingCard = ({ fruit, index }) => {
       >
         <div className="relative">
           <img
-            src={fruit.image}
+            src={fruit.image[currentImageIndex]}
             alt={fruit.name}
-            className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-64 object-cover transition-opacity duration-700"
           />
           <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full shadow-md">
             <div className="flex items-center space-x-1">
@@ -235,68 +473,6 @@ const FloatingCard = ({ fruit, index }) => {
     </div>
   );
 };
-
-const fruits = [
-  {
-    id: 1,
-    name: "Premium Mangoes",
-    price: 100,
-    rating: 4.8,
-    image:
-      "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80",
-    description: "Sweet and juicy mangoes from the finest orchards",
-    category: "Tropical",
-  },
-  {
-    id: 2,
-    name: "Organic Avocados",
-    price: 900,
-    rating: 4.9,
-    image:
-      "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&q=80",
-    description: "Creamy and nutritious avocados",
-    category: "Tropical",
-  },
-  {
-    id: 3,
-    name: "Fresh Cherries",
-    price: 500,
-    rating: 4.7,
-    image:
-      "https://images.unsplash.com/photo-1528821128474-27f963b062bf?auto=format&fit=crop&q=80",
-    description: "Fresh and sweet cherries",
-    category: "Berries",
-  },
-  {
-    id: 4,
-    name: "Wild Mulberry",
-    price: 250,
-    rating: 4.6,
-    image: mb,
-    description: "Delicious and healthy mulberries",
-    category: "Berries",
-  },
-  {
-    id: 5,
-    name: "Organic Blueberry",
-    price: 200,
-    rating: 4.9,
-    image:
-      "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&q=80",
-    description: "Fresh blueberries packed with antioxidants",
-    category: "Berries",
-  },
-  {
-    id: 6,
-    name: "Fresh Strawberry",
-    price: 50,
-    rating: 4.8,
-    image:
-      "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&q=80",
-    description: "Sweet and juicy strawberries",
-    category: "Berries",
-  },
-];
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");

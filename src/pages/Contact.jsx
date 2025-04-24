@@ -169,7 +169,7 @@ const Contact = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="space-y-4 xs:space-x-4 sm:space-x-4 md:space-x-8  lg:space-x-8  xl:space-x-8  xxl:space-x-8"
+              className="space-y-4 xs:space-y-4 sm:space-y-4 md:space-y-4  lg:space-y-4  xl:space-y-4  xxl:space-y-4"
             >
               <div className="bg-white p-8 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-semibold mb-6">
@@ -180,7 +180,7 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 text-green-600" />
                     <div>
                       <h3 className="font-semibold">Address</h3>
-                      <p className="text-gray-600">Mumbai, India.</p>
+                      <p className="text-gray-600">All Over India.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -204,16 +204,19 @@ const Contact = () => {
                 <h2 className="text-2xl font-semibold mb-6">Business Hours</h2>
                 <div className="space-y-2">
                   <p className="flex justify-between">
-                    <span className="text-gray-600">Monday - Friday:</span>
-                    <span>9:00 AM - 6:00 PM</span>
+                    <span className="font-semibold text-gray-600">
+                      27/4 Availability
+                    </span>
                   </p>
                   <p className="flex justify-between">
-                    <span className="text-gray-600">Saturday:</span>
-                    <span>10:00 AM - 4:00 PM</span>
+                    <span className="font-semibold text-gray-600">
+                      Fatest Delivery
+                    </span>
                   </p>
                   <p className="flex justify-between">
-                    <span className="text-gray-600">Sunday:</span>
-                    <span>Closed</span>
+                    <span className="font-semibold text-gray-600">
+                      All Over India
+                    </span>
                   </p>
                 </div>
               </div>
