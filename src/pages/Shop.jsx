@@ -263,8 +263,8 @@ const FloatingCard = ({ fruit, index }) => {
   const form = useRef();
   const [modalOpen, setModalOpen] = useState(false);
   const [order, setOrder] = useState(defaultOrderFormData);
-  const [tempQty, setTempQty] = useState("");
-  const [tempUnit, setTempUnit] = useState("");
+  const [tempQty, setTempQty] = useState("1");
+  const [tempUnit, setTempUnit] = useState("Dozen");
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -373,10 +373,10 @@ const FloatingCard = ({ fruit, index }) => {
                   className="w-1/2 px-4 py-2 border rounded"
                   required
                 >
-                  <option value="">Unit</option>
                   <option value="Dozen">Dozen</option>
                   <option value="Half Dozen">Half Dozen</option>
-                  <option value="Patti">Patti</option>
+                  <option value="Patti">Paiti</option>
+                  <option value="Kilogram">Kilogram</option>
                 </select>
               </div>
 
