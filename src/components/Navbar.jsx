@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Citrus } from "lucide-react";
-
+import logo from "../assets/Images/WhatsApp Image 2025-04-24 at 17.00.07.jpeg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +14,7 @@ const Navbar = () => {
               src="https://res.cloudinary.com/dxokfhkhu/image/upload/v1744453468/eea34ff2-0146-4ff4-b9e8-fc15929d9b51_y0fvkf.jpg"
               className="h-12 w-12 text-green-600"
             />
-            <span className="text-gray-900 font-bold text-xl">Indo Fruits</span>
+            <img src={logo} className="h-9 w-full" />
           </Link>
 
           <div className="hidden md:block">

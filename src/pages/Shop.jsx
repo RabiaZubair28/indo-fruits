@@ -216,7 +216,7 @@ const fruits = [
     name: "Wild Mulberry",
     price: 250,
     rating: 4.6,
-    image: [mb, mb1, mb2, mb3, mb4, mb5, mb6, mb7],
+    image: [mb1, mb2, mb3, mb4, mb5, mb6, mb7, mb3],
     description: "Delicious and healthy mulberries",
     category: "Berries",
   },
@@ -269,19 +269,13 @@ const FloatingCard = ({ fruit, index }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Auto-scroll forward
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % fruit.image.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [fruit.image]);
 
   // Auto-advance images every 2 seconds
   useEffect(() => {
-    if (fruit.image.length > 1) {
+    if (fruit.image && fruit.image.length >= 7) {
       const interval = setInterval(() => {
-        setCurrentImageIndex(
-          (prevIndex) => (prevIndex + 1) % fruit.image.length
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === fruit.image.length - 1 ? 0 : prevIndex + 1
         );
       }, 2000);
       return () => clearInterval(interval);

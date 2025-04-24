@@ -39,7 +39,7 @@ const useImageSlider = (images, delay = 2000) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (!images || images.length < 2) return;
+    if (!images || images.length < 8) return; // updated to 8
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
     }, delay);
