@@ -438,7 +438,16 @@ const FloatingCard = ({ fruit, index }) => {
           <button
             className="w-full bg-green-600 text-white py-3 px-4 rounded-xl hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 transform hover:scale-105 transition-transform duration-300"
             onClick={() => {
-              setOrder((prev) => ({ ...prev, name: fruit.name }));
+              // Initialize default quantity/unit so EmailJS always receives itemNo
+              const initialQty = "1";
+              const initialUnit = "Dozen";
+              setTempQty(initialQty);
+              setTempUnit(initialUnit);
+              setOrder({
+                ...defaultOrderFormData,
+                name: fruit.name,
+                itemNo: `${initialQty} ${initialUnit}`.trim(),
+              });
               setModalOpen(true);
             }}
           >
