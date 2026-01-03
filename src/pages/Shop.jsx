@@ -54,20 +54,20 @@ import mn7 from "../assets/Images/mn7.jpeg";
 function CallButton() {
   return (
     <a
-      href="tel:+923337109448" // Change this to your desired number
+      href="tel:+919227111610" // Change this to your desired number
       style={{
         backgroundColor: "white", // Light blue
         borderRadius: "10px",
-        width: "140px",
-        height: "40px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         border: "1px solid green",
         boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
         color: "green",
         fontSize: "18px",
         cursor: "pointer",
+        width: "140px",
+        height: "40px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       Call Now &nbsp;

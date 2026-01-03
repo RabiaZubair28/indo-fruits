@@ -52,7 +52,7 @@ const useImageSlider = (images, delay = 2000) => {
 function CallButton() {
   return (
     <a
-      href="tel:+923337109448" // Change this to your desired number
+      href="tel:+919227111610" // Change this to your desired number
       style={{
         backgroundColor: "black", // Light blue
         borderRadius: "50%",
@@ -100,7 +100,7 @@ const FeatureCard = ({ icon: Icon, title, description, delay }) => {
 function WhatsappButton() {
   return (
     <a
-      href="https://wa.me/923337109448"
+      href="https://wa.me/919227111610"
       target="_blank"
       rel="noopener noreferrer"
       style={{
